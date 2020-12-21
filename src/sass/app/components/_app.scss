@@ -1,0 +1,91 @@
+.container {
+  padding-top: 10em;
+  padding-bottom: 5rem;
+}
+
+#agreeBtn {
+  background-color: $secondary-hex;
+  color: black;
+  float: right;
+}
+
+.form-control-range{
+  background-color: $primary-hex;
+}
+
+.upBtn {
+  border-radius: 30%;
+  margin: 0.1em;
+}
+
+.downBtn{
+  border-radius: 30%;
+  margin: 0.1em;
+}
+
+.smUpBtn{
+  border-radius: 30%;
+  margin: 0.1em;
+}
+
+.smDownBtn {
+  border-radius: 30%;
+  margin: 0.1em;
+}
+
+.total {
+  display: block;
+  color: black;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: $primary-hex;
+  border-color: $primary-hex;
+}
+
+#nextBtn {
+  float: right;
+  border-radius: 10%;
+  background-color: $secondary-hex;
+  color: black;
+}
+
+
+
+.slide{
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s;
+  display: none;
+}
+
+.active-slide{
+  position: sticky;
+  opacity: 1;
+  z-index: 2;
+}
+
+body {
+  background-color: White;
+}
+
+.card-header {
+  background-color: $primary-hex;
+  color: white;
+}
+
+.card-footer {
+  background-color: $primary-hex;
+}
+
+.card-body {
+  background: $secondary-hex;
+}
+
+button {
+  background-color: $secondary-hex;
+}

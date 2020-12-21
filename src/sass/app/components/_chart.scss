@@ -1,0 +1,22 @@
+.key {
+  float: right;
+  display: inline-block;
+}
+
+.key div {
+  height: 12px;
+  width: 12px;
+}
+
+
+svg {
+  padding-right: 1.5em;
+}
+
+.y-label {
+  z-index: 2;
+}
+
+text {
+  white-space: pre-wrap;
+}
