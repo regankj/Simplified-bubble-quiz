@@ -868,7 +868,6 @@ function sumDiff(a, b) {
 }
 
 var fback = [];
-var fback_checked = 0;
 // functionality for the feedback section of the quiz
 if ($("body").is(".feedback")) {
   var uid = getCookie();
@@ -883,13 +882,11 @@ if ($("body").is(".feedback")) {
   yesRad.addEventListener("click", function () {
     noRad.checked = false;
     fback[0] = "Yes";
-    fback_checked += 1;
   });
 
   noRad.addEventListener("click", function () {
     yesRad.checked = false;
     fback[0] = "No";
-    fback_checked += 1;
   });
 
   notRad.addEventListener("click", function () {
@@ -897,7 +894,6 @@ if ($("body").is(".feedback")) {
     quiteRad.checked = false;
     veryRad.checked = false;
     fback[1] = "Not at all";
-    fback_checked += 1;
   });
 
   litRad.addEventListener("click", function () {
@@ -905,7 +901,6 @@ if ($("body").is(".feedback")) {
     quiteRad.checked = false;
     veryRad.checked = false;
     fback[1] = "A little";
-    fback_checked += 1;
   });
 
   quiteRad.addEventListener("click", function () {
@@ -913,7 +908,6 @@ if ($("body").is(".feedback")) {
     notRad.checked = false;
     veryRad.checked = false;
     fback[1] = "Quite interesting";
-    fback_checked += 1;
   });
 
   veryRad.addEventListener("click", function () {
@@ -921,25 +915,20 @@ if ($("body").is(".feedback")) {
     quiteRad.checked = false;
     notRad.checked = false;
     fback[1] = "Very interesting";
-    fback_checked += 1;
   });
 
   document
     .getElementById("fbackConfirm")
     .addEventListener("click", function () {
-      if (fback_checked < 2) {
-        document.getElementById("fbErrText").style.display = "inline-block";
-      } else {
-        document.getElementById("fbErrText").style.display = "none";
-        var txt = txtArea.value;
-        saveFeedback(uid, fback, txt);
-        yesRad.disabled = true;
-        noRad.disabled = true;
-        notRad.disabled = true;
-        litRad.disabled = true;
-        quiteRad.disabled = true;
-        veryRad.disabled = true;
-        txtArea.disabled = true;
-      }
+      document.getElementById("fbErrText").style.display = "none";
+      var txt = txtArea.value;
+      saveFeedback(uid, fback, txt);
+      yesRad.disabled = true;
+      noRad.disabled = true;
+      notRad.disabled = true;
+      litRad.disabled = true;
+      quiteRad.disabled = true;
+      veryRad.disabled = true;
+      txtArea.disabled = true;
     });
 }
