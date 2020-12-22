@@ -36,7 +36,6 @@ if (window.matchMedia("(max-width: 500px)").matches) {
 const qform = document.getElementById("questions");
 var j = 1;
 var k = 1;
-var t = 1;
 var values = {};
 var hbars = {};
 var barSpans = {};
@@ -49,8 +48,6 @@ var means = {};
 var stanDs = {};
 var qs = [];
 var qcodes = [];
-var worstAns = [];
-var sworstAns = [];
 var maxScores = [];
 var diffs = [];
 
@@ -134,7 +131,6 @@ function readData(file, section) {
       var questionNum = "question" + i;
       var valuesNum = "values" + i;
       var barsNum = "bars" + i;
-      var btnsNum = "btns" + i;
       var optionsNum = "options" + i;
       var radsNum = "rads" + i;
       var radLblsNum = "radLbls" + i;
@@ -591,7 +587,6 @@ function finalSlides() {
   document.querySelector("#top h6").innerHTML =
     "No sliders for this question! Please select your answer: ";
   document.getElementById(conID).addEventListener("click", function () {
-    var startTime = Date.now();
     document.getElementById("nextBtn").style.display = "none";
     var num = 0;
     theSlide.innerHTML = "";
@@ -599,7 +594,6 @@ function finalSlides() {
     theSlide.className = "active-slide";
 
     window.scrollBy(0, -200);
-    var startTime1 = Date.now();
     document.querySelector("#top h2").innerHTML = "Well Done!";
     document.querySelector("#top h6").innerHTML = "";
     var heading = document.createElement("h6");
@@ -885,7 +879,6 @@ if ($("body").is(".feedback")) {
   var quiteRad = document.getElementById("intQuite");
   var veryRad = document.getElementById("intVery");
   var txtArea = document.getElementById("openFeedback");
-  var fbform = document.getElementById("userFeedback");
 
   yesRad.addEventListener("click", function () {
     noRad.checked = false;
@@ -937,12 +930,7 @@ if ($("body").is(".feedback")) {
       if (fback_checked < 2) {
         document.getElementById("fbErrText").style.display = "inline-block";
       } else {
-        document.getElementById("fbErrText").className = "alert alert-success";
-        document.getElementById("fbErrText").innerHTML = "Survey Code: " + uid;
-        document.getElementById("fbErrText").style.display = "inline-block";
-        document.getElementById("c_and_p").style.display = "inline-block";
-        document.getElementById("mturk").innerHTML = "Survey Code: " + uid;
-        document.getElementById("mturk").style.display = "inline-block";
+        document.getElementById("fbErrText").style.display = "none";
         var txt = txtArea.value;
         saveFeedback(uid, fback, txt);
         yesRad.disabled = true;
